@@ -1,0 +1,20 @@
+function factorial(n) {
+    if (n <= 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+  
+  function combinations(n, r) {
+    if (r > n) {
+      return 0;
+    } else {
+      return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+  }
+  
+  // example usage
+  console.log(factorial(5)); // output: 120
+  console.log(combinations(5, 2)); // output: 10
+  

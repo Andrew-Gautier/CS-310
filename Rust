@@ -1,0 +1,37 @@
+// Factorial function
+fn factorial(n: i64) -> i64 {
+    if n == 0 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+// Combinations function
+fn combinations(n: i64, r: i64) -> i64 {
+    if r > n {
+        0
+    } else {
+        factorial(n) / (factorial(r) * factorial(n - r))
+    }
+}
+
+// Hypercake function
+fn hypercake(n: i64, k: i64) -> i64 {
+    if k == 1 {
+        n
+    } else if n == 1 {
+        1
+    } else {
+        let mut result = 0;
+        for i in 1..=n {
+            result += hypercake(i - 1, k - 1);
+        }
+        result
+    }
+}
+fn main() {
+    println!("Factorial of 5 is {}", factorial(5));
+    println!("Combinations of 5 choose 2 is {}", combinations(5, 2));
+    println!("Hypercake for n=3 and k=2 is {}", hypercake(3, 2));
+}

@@ -1,8 +1,5 @@
-function hypercake(n, k) {
-  // memoization data structure for factorial
-  const factorialMemo = {};
-
-  function factorial(n) {
+const factorialMemo = {};
+function factorial(n) {
     if (n <= 1) {
       return 1;
     } else if (factorialMemo[n]) {
@@ -30,15 +27,4 @@ function hypercake(n, k) {
 
     return memoizedCombinations(n, r);
   }
-const sums = {};
-  let sum = 0;
-  for (let i = 0; i <= k; i++) {
-    sum += combinations(n, i);  // n choose i
-    // memoize the sum
-    sums[`${n},${i}`] = sum;
-  }
-  return sum;
- 
-}
-console.log(hypercake(8, 5));
-
+  console.log(combinations(6, 5));

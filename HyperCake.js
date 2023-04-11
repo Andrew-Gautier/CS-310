@@ -1,3 +1,4 @@
+// This program was written by Andrew Gautier
 function hypercake(n, k) {
   // memoization data structure for factorial
   const factorialMemo = {};
@@ -41,4 +42,14 @@ const sums = {};
  
 }
 console.log(hypercake(8, 5));
-
+// prompt the user for input and print the result to the console
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+readline.question('Enter n and k: ', (input) => {
+  const [n, k] = input.split(' ').map(Number);
+  console.log(hypercake(n, k));
+  readline.close();
+}
+);

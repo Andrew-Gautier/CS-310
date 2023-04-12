@@ -1,3 +1,4 @@
+// This was pair programmed by Andrew Gautier and Jay Bhardwaj
 program HyperCakePascal;
 uses SysUtils;
 
@@ -8,17 +9,6 @@ begin
   else
     factorial := n * factorial(n - 1);
 end;
-
-// OLD factorial function
-// begin
-//   if n <= 1 then
-//     factorialArray[n] := 1
-//   else if factorialArray[n] = 0 then
-//     factorialArray[n] := n * factorial(n - 1);
-//   factorial := factorialArray[n];
-// end;
-// rewrite the combinations function to use the factorial function above
-
 
 function combinations(n, r: Integer): Int64;
 begin
